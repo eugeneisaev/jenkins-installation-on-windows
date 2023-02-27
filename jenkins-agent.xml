@@ -1,0 +1,9 @@
+<service>
+  <id>jenkins8080agent</id>
+  <name>Jenkins Slave for jenkins:8080</name>
+  <description>This service runs a slave for Jenkins continuous integration system.</description>
+  <executable>C:\Program Files\Java\jdk-19\bin\java.exe</executable>
+  <arguments>-jar agent.jar -jnlpUrl http://localhost:8080/manage/computer/SVN/jenkins-agent.jnlp -secret 99ed5d284ef87f8d21b940a99aca1063b7f9619d63a304f0ab583c7c6753fab3 -workDir "C:\jenkins"</arguments>
+  <log mode="roll"></log>
+  <onfailure action="restart" />
+</service>
